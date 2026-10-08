@@ -9,17 +9,19 @@ class SinglyLinkList:
         self.head = head
 
     def insertATbegin(self,new_node,pos):
+                    temp=self.head
+                    if pos==1:
+                       new_node.next=self.head
+                       self.head=new_node
+                    else:
+                        p=1
+                        while(p!=pos-1 and temp.next !=None):
+                           temp=temp.next
 
-        if pos==1:
-            new_node.next=self.head
-            self.head=new_node
-        else:
-            p=1
-            while(p!=pos-1):
-                temp=temp.next
-                p=p+1
-                new_node.next=temp.next
-                temp.next=new_node
+                           p=p+1
+
+                    new_node.next=temp.next
+                    temp.next=new_node
 
 
     def  insertATEnd(self,value):
@@ -40,10 +42,12 @@ class SinglyLinkList:
 
 
 obj =SinglyLinkList()
-obj.insertATEnd(10)
+obj.insertATEnd(10)  
 obj.insertATEnd(20)
 obj.insertATEnd(30)
 obj.insertATbegin(Node(100),1)
+obj.insertATbegin(Node(66),4)
+
 
 obj.printLL()
 
