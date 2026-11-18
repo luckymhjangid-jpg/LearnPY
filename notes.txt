@@ -1,0 +1,6 @@
+create a folder that will act as a package root
+add modules - inside the directory add python files(modules).
+read it as a directory
+a init .py file can be a blank file
+
+from packagename.modulename import fuction name
