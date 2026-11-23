@@ -25,39 +25,48 @@
 
 
 # # use of finally 
-balance = 10000
-try:
-    print("Processing Transaction")
-    amount = int(input("Enter amount5"))
+# balance = 10000
+# try:
+#     print("Processing Transaction")
+#     amount = int(input("Enter amount5"))
 
-    if amount > 1000:
-         print("Transaction Approved")     if amount > balance:
-         raise Exception("Amount must be positive")
-    balance -= amount
-    print("Remaining balance",balance)
+#     if amount > 1000:
+#          print("Transaction Approved")     if amount > balance:
+#          raise Exception("Amount must be positive")
+#     balance -= amount
+#     print("Remaining balance",balance)
 
-except Exception as e:
-     print(e)
-finally:
-     print("Thakyou")
+# except Exception as e:
+#      print(e)
+# finally:
+#      print("Thakyou")
 
- #one block for mulitple exceptions
-try:
-      num = int(input("Enter the number:"))
-      result = 100/num
+#  #one block for mulitple exceptions
+# try:
+#       num = int(input("Enter the number:"))
+#       result = 100/num
      
-except (ValueError , ZeroDivisionError):
-    print("Invalid Operation")
+# except (ValueError , ZeroDivisionError):
+#     print("Invalid Operation")
 
-else:
-      print(result)
-#exception object
+# else:
+#       print(result)
+# #exception object
+# try:
+#      a = 10
+#      b=0
+#      c=a/b
+
+# except ZeroDivisionError as e:
+#      print("Zero division error")
+
+#password Validation
 try:
-     a = 10
-     b=0
-     c=a/b
+    password = (input("Enter your Password:"))
+    if len(password)<8:
+        raise ValueError("Password must contain at least 8 characters")
+    print("Valid Password")
 
-except ZeroDivisionError as e:
-     print("Zero division error")
-
+except ValueError as e:
+    print(e)
 
